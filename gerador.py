@@ -6,8 +6,12 @@ Gerador de senhas
 2 - Quais caracteres deve ter na senha
 '''
 
-# 1 - pedir ao usuário o tamanho da senha
+# 1 - pedido ao usuário
 tamanho_senha = 10 #int(input("Digite o tamanho da senha: "))
+incluir_maiusculas = "s" #input("Incluir letras maiúsculas? Digite 's' ou 'n'")
+incluir_minusculas = "s" #input("Incluir letras minúsculas? Digite 's' ou 'n'")
+incluir_numeros = "s" #input("Incluir números? Digite 's' ou 'n'")
+incluir_simbolos = "s" #input("Incluir símbolos?? Digite 's' ou 'n'")
 
 i = 0
 senha = ""
@@ -20,11 +24,15 @@ while i < tamanho_senha:
     i += 1
 
 # 3 - adicionar numeros aleatorios na senha
-senha += str(random.randint(0,9))
+if incluir_numeros == 's':
+    senha += str(random.randint(0,9))
 # 4 - letras maiusculas aleatorias na senha
-senha += random.choice(lista_letras_maiusculas)
+if incluir_numeros == 's':
+    senha += random.choice(lista_letras_maiusculas)
 # 5 - letras minusculas aleatorias na senha
-senha += random.choice(lista_letras_minusculas)
+if incluir_numeros == 's':
+    senha += random.choice(lista_letras_minusculas)
 # 6 - simbolos aleatorios na senha
-senha += random.choice(lista_simbolos)
+if incluir_numeros == 's':
+    senha += random.choice(lista_simbolos)
 print(senha)
