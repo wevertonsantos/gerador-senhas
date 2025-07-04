@@ -14,14 +14,21 @@ incluir_numeros = "s" #input("Incluir números? Digite 's' ou 'n'")
 incluir_simbolos = "s" #input("Incluir símbolos?? Digite 's' ou 'n'")
 
 i = 0
-senha = ""
+senha = []
 lista_letras_maiusculas = ["A","W","C","G","D","P","L","K","D","S"]
 lista_letras_minusculas = ["a","b","d","e","s","w","s","x","z","y"]
 lista_simbolos = ["!","@","$","%","&","-","*","+"]
 
 #2 - criar a senha do tamanho pedido pelo usuário
-while i < tamanho_senha:
-    i += 1
+for i in range(tamanho_senha):
+    senha.append('')
+for i in senha:
+    ...
+senha[senha.index('')] = random.choice(lista_letras_maiusculas)
+senha[senha.index('')] = random.choice(lista_letras_minusculas)
+senha[senha.index('')] = str(random.randint(0,9))
+senha[senha.index('')] = random.choice(lista_simbolos)
+print(senha)
 
 # 3 - adicionar numeros aleatorios na senha
 if incluir_numeros == 's':
@@ -35,4 +42,3 @@ if incluir_numeros == 's':
 # 6 - simbolos aleatorios na senha
 if incluir_numeros == 's':
     senha += random.choice(lista_simbolos)
-print(senha)
