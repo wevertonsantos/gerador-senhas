@@ -10,7 +10,7 @@ Gerador de senhas
 tamanho_senha = 12 #input("Digite o tamanho da senha: ")
 #2 - criar a senha do tamanho pedido pelo usuário
 i = 0
-senha = []
+senha = ""
 while i < tamanho_senha:
     senha += str(i)
     i += 1
