@@ -1,3 +1,4 @@
+import random
 '''
 Gerador de senhas
 
@@ -14,4 +15,9 @@ def main():
     incluir_simbolos = input("Incluir símbolos? Responda com 's' ou 'n' ")
 
 def criando_senha(tamanho_senha):
-    ...
+    lista_letras_maiusculas = ["A","B","C","D","E","F","W","X","Y","Z"]
+    lista_letras_minusculas = ["d","f","g","s","a","w","z","h","d","s"]
+    lista_numeros = []
+    for numero in range(0,50):
+        lista_numeros.append(numero)
+    lista_simbolos = ["@","#","%","!","&","(","*","-"]
