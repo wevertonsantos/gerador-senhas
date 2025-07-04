@@ -14,6 +14,7 @@ incluir_numeros = "s" #input("Incluir números? Digite 's' ou 'n'")
 incluir_simbolos = "s" #input("Incluir símbolos?? Digite 's' ou 'n'")
 
 i = 0
+x = 0
 senha = []
 lista_letras_maiusculas = ["A","W","C","G","D","P","L","K","D","S"]
 lista_letras_minusculas = ["a","b","d","e","s","w","s","x","z","y"]
@@ -22,8 +23,7 @@ lista_simbolos = ["!","@","$","%","&","-","*","+"]
 #2 - criar a senha do tamanho pedido pelo usuário
 for i in range(tamanho_senha):
     senha.append('')
-for i in senha:
-    ...
+# preciso fazer com que cada caractere entre no array e preencha ele por completo
 senha[senha.index('')] = random.choice(lista_letras_maiusculas)
 senha[senha.index('')] = random.choice(lista_letras_minusculas)
 senha[senha.index('')] = str(random.randint(0,9))
