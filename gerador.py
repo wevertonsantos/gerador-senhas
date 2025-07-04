@@ -6,18 +6,22 @@ Gerador de senhas
 2 - Quais caracteres deve ter na senha
 '''
 
-def main():
-    print("Gerador de senhas")
-    tamanho_senha = int(input("Digite o tamanho da senha: "))
-    letras_maiusculas = input("Incluir letras maiúsculas? Responda com 's' ou 'n' ")
-    letras_minusculas = input("Incluir letras Incluir letras minúsculas? Responda com 's' ou 'n' ")
-    incluir_numeros = input("Incluir números? Responda com 's' ou 'n' ")
-    incluir_simbolos = input("Incluir símbolos? Responda com 's' ou 'n' ")
+tamanho_senha = 12
+lista_letras_maiusculas = ["A","B","C","D","E","F","W","X","Y","Z"]
+lista_letras_minusculas = ["d","f","g","s","a","w","z","h","d","s"]
+lista_numeros = []
+for numero in range(0,50):
+    lista_numeros.append(numero)
+lista_simbolos = ["@","#","%","!","&","(","*","-"]
 
-def criando_senha(tamanho_senha):
-    lista_letras_maiusculas = ["A","B","C","D","E","F","W","X","Y","Z"]
-    lista_letras_minusculas = ["d","f","g","s","a","w","z","h","d","s"]
-    lista_numeros = []
-    for numero in range(0,50):
-        lista_numeros.append(numero)
-    lista_simbolos = ["@","#","%","!","&","(","*","-"]
+# pegar letras, numeros e simbolos até dar o tamanho da senha
+letras_maiusculas = random.sample(lista_letras_maiusculas,5)
+letras_minusculas = random.sample(lista_letras_minusculas,5)
+simbolos = random.sample(lista_simbolos,5)
+senha = []
+#adicionado os caracteres na senha
+senha += letras_maiusculas
+senha += letras_minusculas
+senha += simbolos
+print(senha)
+# criar a senha do tamanho pedido pelo usuário
