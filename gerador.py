@@ -11,7 +11,7 @@ tamanho_senha = 12 #input("Digite o tamanho da senha: ")
 #2 - criar a senha do tamanho pedido pelo usuário
 i = 0
 senha = []
-while i < 12:
+while i < tamanho_senha:
     senha += str(i)
     i += 1
 print(senha)
