@@ -19,7 +19,7 @@ while i < tamanho_senha:
         break
     else:
         # 3 - adicionar numeros aleatorios na senha
-        senha += random.randint(0,50)
+        senha += str(random.randint(0,9))
         # 4 - letras maiusculas aleatorias na senha
         senha += random.choice(lista_letras_maiusculas)
     i += 1
