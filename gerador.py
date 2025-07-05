@@ -22,16 +22,21 @@ minusculas = ["a","b","d","e","s","w","s","x","z","y"]
 numeros = ["0","1","2","3","4","5","6","7","8","9"]
 simbolos = ["!","@","$","%","&","-","*","+"]
 
-#2 - criar a senha do tamanho pedido pelo usuário
+#2 - fazer com que senha tenha o caractere pedido pelo usuário
+if incluir_maiusculas == 's':
+    caracteres += maiusculas 
+
+if incluir_minusculas == 's':
+    caracteres += minusculas
+
+if incluir_numeros == 's':
+    caracteres += numeros
+
+if incluir_simbolos == 's':
+    caracteres += simbolos
+
+#3 - criar a senha do tamanho pedido pelo usuário
 for i in range(tamanho_senha):
     senha += random.choice(caracteres)
 
-#3 - fazer com que senha tenha o caractere pedido pelo usuário
-if incluir_maiusculas == "s":
-    caracteres += random.choice(maiusculas)
-if incluir_minusculas == "s":
-    caracteres += random.choice(minusculas)
-if incluir_numeros == "s":
-    caracteres += random.choice(numeros)
-if incluir_simbolos == "s":
-    caracteres += random.choice(simbolos)
+print(senha)
