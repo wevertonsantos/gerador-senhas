@@ -15,19 +15,21 @@ incluir_simbolos = "s" #input("Incluir símbolos?? Digite 's' ou 'n'")
 
 i = 0
 x = 0
-senha = []
+senha = ""
 lista_letras_maiusculas = ["A","W","C","G","D","P","L","K","D","S"]
 lista_letras_minusculas = ["a","b","d","e","s","w","s","x","z","y"]
 lista_simbolos = ["!","@","$","%","&","-","*","+"]
 
 #2 - criar a senha do tamanho pedido pelo usuário
-for i in range(tamanho_senha):
-    senha.append('')
+while i < tamanho_senha:
+    senha += random.choice(lista_letras_maiusculas) + random.choice(lista_letras_minusculas) + str(random.randint(0,9)) + random.choice(lista_simbolos)
+    i += 1
+
+    #senha.append(random.choice(lista_letras_maiusculas))
+    #senha.append(random.choice(lista_letras_minusculas))
+    #senha.append(str(random.randint(0,9)))
+    #senha.append(random.choice(lista_simbolos))
 # preciso fazer com que cada caractere entre no array e preencha ele por completo
-senha[senha.index('')] = random.choice(lista_letras_maiusculas)
-senha[senha.index('')] = random.choice(lista_letras_minusculas)
-senha[senha.index('')] = str(random.randint(0,9))
-senha[senha.index('')] = random.choice(lista_simbolos)
 print(senha)
 
 # 3 - adicionar numeros aleatorios na senha
