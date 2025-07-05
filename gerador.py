@@ -1,42 +1,72 @@
 import random
-'''
-Gerador de senhas
+import string
 
-1 - Usuário deve escolher tamanho da senha
-2 - Quais caracteres deve ter na senha
-'''
+# Ponto de entrada principal do programa
+def main():
+    """
+    Função que coleta as preferências do usuário e exibe a senha gerada.
+    """
+    print("Gerador de Senhas Personalizadas")
+    
+    # Entrada do usuário
+    tamanho_senha = int(input("Digite o tamanho da senha: "))
+    incluir_maiusculas = input("Incluir letras maiúsculas? (s/n): ").lower()
+    incluir_minusculas = input("Incluir letras minúsculas? (s/n): ").lower()
+    incluir_numeros = input("Incluir números? (s/n): ").lower()
+    incluir_simbolos = input("Incluir símbolos? (s/n): ").lower()
 
-# 1 - pedido ao usuário
-tamanho_senha = 10 #int(input("Digite o tamanho da senha: "))
-incluir_maiusculas = "s" #input("Incluir letras maiúsculas? Digite 's' ou 'n'")
-incluir_minusculas = "s" #input("Incluir letras minúsculas? Digite 's' ou 'n'")
-incluir_numeros = "s" #input("Incluir números? Digite 's' ou 'n'")
-incluir_simbolos = "s" #input("Incluir símbolos?? Digite 's' ou 'n'")
+    # Converte as entradas em valores booleanos (True/False)
+    usar_maiusculas = incluir_maiusculas == 's'
+    usar_minusculas = incluir_minusculas == 's'
+    usar_numeros = incluir_numeros == 's'
+    usar_simbolos = incluir_simbolos == 's'
 
-i = 0
-x = 0
-senha = ""
-caracteres = []
-maiusculas = ["A","W","C","G","D","P","L","K","D","S"]
-minusculas = ["a","b","d","e","s","w","s","x","z","y"]
-numeros = ["0","1","2","3","4","5","6","7","8","9"]
-simbolos = ["!","@","$","%","&","-","*","+"]
+    # Chama a função para gerar a senha
+    senha_gerada = gerar_senha(
+        tamanho_senha,
+        usar_maiusculas,
+        usar_minusculas,
+        usar_numeros,
+        usar_simbolos
+    )
+    
+    # Exibe o resultado
+    print(f"Senha gerada: {senha_gerada}")
 
-#2 - fazer com que senha tenha o caractere pedido pelo usuário
-if incluir_maiusculas == 's':
-    caracteres += maiusculas 
+# Função responsável por montar a lista de caracteres disponíveis
+def montar_lista_de_caracteres(usar_maiusculas, usar_minusculas, usar_numeros, usar_simbolos):
+    """
+    Retorna uma lista de caracteres disponíveis para montar a senha, 
+    com base nas opções escolhidas pelo usuário.
+    """
+    caracteres = []
+    if usar_maiusculas:
+        caracteres += list(string.ascii_uppercase)
+    if usar_minusculas:
+        caracteres += list(string.ascii_lowercase)
+    if usar_numeros:
+        caracteres += list(string.digits)
+    if usar_simbolos:
+        caracteres += list("!@#$%&*-+")
+    return caracteres
 
-if incluir_minusculas == 's':
-    caracteres += minusculas
+# Função principal para gerar a senha
+def gerar_senha(tamanho, usar_maiusculas, usar_minusculas, usar_numeros, usar_simbolos):
+    """
+    Gera uma senha aleatória com base no tamanho e nas categorias de caracteres selecionadas.
+    """
+    
+    # Monta a lista final de caracteres permitidos
+    caracteres_possiveis = montar_lista_de_caracteres(
+        usar_maiusculas, usar_minusculas, usar_numeros, usar_simbolos
+    )
 
-if incluir_numeros == 's':
-    caracteres += numeros
+     # Se o usuário não selecionou nenhuma categoria, não há como gerar senha
+    if not caracteres_possiveis:
+        return "Nenhum tipo de caractere selecionado!"
 
-if incluir_simbolos == 's':
-    caracteres += simbolos
+     # Gera a senha com o tamanho desejado, escolhendo aleatoriamente da lista final
+    senha = ''.join(random.choice(caracteres_possiveis) for _ in range(tamanho))
+    return senha
 
-#3 - criar a senha do tamanho pedido pelo usuário
-for i in range(tamanho_senha):
-    senha += random.choice(caracteres)
-
-print(senha)
+main()
