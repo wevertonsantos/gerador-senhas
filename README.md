@@ -43,9 +43,11 @@ python gerador.py
 ```
 
 ## 📁 Organização
+```bash
 gerador-senhas/
 ├── gerador.py
 ├── README.md
+```
 
 ## 🤝 Contribuições
 Sinta-se à vontade para abrir issues, sugerir melhorias ou fazer um fork para evoluir o projeto!
