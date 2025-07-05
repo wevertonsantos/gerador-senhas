@@ -21,10 +21,3 @@ lista_caracteres = ["A","W","C","G","D","P","L","K","D","S","a","b","d","e","s",
 #2 - criar a senha do tamanho pedido pelo usuário
 for i in range(tamanho_senha):
     senha += random.choice(lista_caracteres)
-
-    #senha.append(random.choice(lista_letras_maiusculas))
-    #senha.append(random.choice(lista_letras_minusculas))
-    #senha.append(str(random.randint(0,9)))
-    #senha.append(random.choice(lista_simbolos))
-# preciso fazer com que cada caractere entre no array e preencha ele por completo
-print(senha)
